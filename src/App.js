@@ -1,4 +1,7 @@
-import { Button, FormControl, InputLabel} from '@material-ui/core';
+import { FormControl} from '@material-ui/core';
+import Input from '@mui/material/Input';
+import InputLabel from '@mui/material/InputLabel';
+import Button from '@mui/material/Button';
 import { useState } from 'react';
 import  Message  from './parts/Message'
 import './App.css';
@@ -19,9 +22,9 @@ function App() {
       <h1>React, Firebase Facebook Messenger</h1>
       <form>
         <FormControl>
-          <InputLabel>Enter a message</InputLabel>
-          <input placeholder='Enter text' onChange={event => setInput(event.target.value)} />
-          <Button type="submit" variant="contained" onClick={sendMessage}>Send Message</Button>
+          <InputLabel>Enter a message below</InputLabel>
+          <Input placeholder='Enter message here' onChange={event => setInput(event.target.value)} />
+          <Button disabled={!input} type="submit" variant="contained" onClick={sendMessage}>Send Message</Button>
         </FormControl>
       </form>
       {/* Showing Message */}
