@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import FlipMove from "react-flip-move";
 import { FormControl, IconButton } from "@material-ui/core";
-import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import Button from "@mui/material/Button";
 import Input from "@mui/material/Input";
 import Message from "./parts/Message";
@@ -9,6 +8,8 @@ import "./App.css";
 import database from "./firebase";
 import firebase from "firebase/app";
 import "firebase/firestore";
+import SendIcon from '@mui/icons-material/Send';
+
 
 function App() {
   const [input, setInput] = useState("");
@@ -49,24 +50,17 @@ function App() {
       <h1>Facebook Messenger Clone</h1>
       <h3>Welcome {username}</h3>
       <form className="app__form">
-        <FormControl>
+        <FormControl className="app__formControl">
           <Input
+            className="app__input"
             variant="filled"
             onChange={(event) => setInput(event.target.value)}
             placeholder="Input Message"
           />
-
-          <IconButton color="primary" aria-label="upload picture" component="span">
-            <PhotoCamera />
+          <IconButton className="app__IconButton" disabled={!input} type="submit" variant="contained" onClick={sendMessage} color="primary">
+            <SendIcon variant="contained" />
           </IconButton>
-          <Button
-            disabled={!input}
-            type="submit"
-            variant="contained"
-            onClick={sendMessage}
-          >
-            Send Message
-          </Button>
+
         </FormControl>
       </form>
       {/* Loop for Showing Message */}

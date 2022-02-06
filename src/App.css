@@ -1,18 +1,30 @@
 .App {
     text-align: center;
 }
-
 .app__form {
     z-index: 1;
     position: fixed;
     bottom: 0;
-    padding: 20px;
     width: 100%;
     background-color: #E0E0E0;
-    margin: 20px;
+   
 }
-
+.app__formControl {
+    display: flex !important;
+    flex-direction: row !important;
+    margin: 10px;
+}
+.app__input {
+    flex: 1;
+}
+.app__IconButton{
+    flex: 0;
+}
 .logo {
     height: 80px;
     width: 80px;
+}
+
+.css-1x51dt5-MuiInputBase-input-MuiInput-input {
+    color: #1c86e1 !important;
 }
